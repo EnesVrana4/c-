@@ -1,0 +1,15 @@
+C:\Users\User\Documents\C#2022\Puzzle\obj\Debug\net6.0\Puzzle.csproj.AssemblyReference.cache
+C:\Users\User\Documents\C#2022\Puzzle\obj\Debug\net6.0\Puzzle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\C#2022\Puzzle\obj\Debug\net6.0\Puzzle.AssemblyInfoInputs.cache
+C:\Users\User\Documents\C#2022\Puzzle\obj\Debug\net6.0\Puzzle.AssemblyInfo.cs
+C:\Users\User\Documents\C#2022\Puzzle\obj\Debug\net6.0\Puzzle.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\C#2022\Puzzle\bin\Debug\net6.0\Puzzle.exe
+C:\Users\User\Documents\C#2022\Puzzle\bin\Debug\net6.0\Puzzle.deps.json
+C:\Users\User\Documents\C#2022\Puzzle\bin\Debug\net6.0\Puzzle.runtimeconfig.json
+C:\Users\User\Documents\C#2022\Puzzle\bin\Debug\net6.0\Puzzle.dll
+C:\Users\User\Documents\C#2022\Puzzle\bin\Debug\net6.0\Puzzle.pdb
+C:\Users\User\Documents\C#2022\Puzzle\obj\Debug\net6.0\Puzzle.dll
+C:\Users\User\Documents\C#2022\Puzzle\obj\Debug\net6.0\refint\Puzzle.dll
+C:\Users\User\Documents\C#2022\Puzzle\obj\Debug\net6.0\Puzzle.pdb
+C:\Users\User\Documents\C#2022\Puzzle\obj\Debug\net6.0\Puzzle.genruntimeconfig.cache
+C:\Users\User\Documents\C#2022\Puzzle\obj\Debug\net6.0\ref\Puzzle.dll
