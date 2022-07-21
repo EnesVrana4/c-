@@ -1,0 +1,15 @@
+C:\Users\User\Documents\C#2022\Wizard\bin\Debug\net6.0\Wizard.exe
+C:\Users\User\Documents\C#2022\Wizard\bin\Debug\net6.0\Wizard.deps.json
+C:\Users\User\Documents\C#2022\Wizard\bin\Debug\net6.0\Wizard.runtimeconfig.json
+C:\Users\User\Documents\C#2022\Wizard\bin\Debug\net6.0\Wizard.dll
+C:\Users\User\Documents\C#2022\Wizard\bin\Debug\net6.0\Wizard.pdb
+C:\Users\User\Documents\C#2022\Wizard\obj\Debug\net6.0\Wizard.csproj.AssemblyReference.cache
+C:\Users\User\Documents\C#2022\Wizard\obj\Debug\net6.0\Wizard.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\C#2022\Wizard\obj\Debug\net6.0\Wizard.AssemblyInfoInputs.cache
+C:\Users\User\Documents\C#2022\Wizard\obj\Debug\net6.0\Wizard.AssemblyInfo.cs
+C:\Users\User\Documents\C#2022\Wizard\obj\Debug\net6.0\Wizard.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\C#2022\Wizard\obj\Debug\net6.0\Wizard.dll
+C:\Users\User\Documents\C#2022\Wizard\obj\Debug\net6.0\refint\Wizard.dll
+C:\Users\User\Documents\C#2022\Wizard\obj\Debug\net6.0\Wizard.pdb
+C:\Users\User\Documents\C#2022\Wizard\obj\Debug\net6.0\Wizard.genruntimeconfig.cache
+C:\Users\User\Documents\C#2022\Wizard\obj\Debug\net6.0\ref\Wizard.dll
