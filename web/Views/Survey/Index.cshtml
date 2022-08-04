@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="Create" method="post">
+        <div class="Name flex">
+            <p>Your Name:</p>
+            <input type="text" name="YourName">
+        </div>
+        <div class="Location flex">
+            <p>Dojo Location:</p>
+            <select name="DojoLocation">
+                <option value="SanJose">San Jose</option>
+                <option value="SanAndreas">San Andreas</option>
+            </select>
+        </div>
+        <div class="Language flex">
+            <p>Favorite Language:</p>
+            <select name="FavouriteLanguage">
+                <option value="csharp">C#</option>
+                <option value="JS">JS</option>
+            </select>
+        </div>
+        <p>Comment (optional):</p>
+        <textarea name="comment" cols="20" rows="3"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
