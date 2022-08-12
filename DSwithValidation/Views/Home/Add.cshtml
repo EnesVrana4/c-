@@ -1,0 +1,22 @@
+@model Dojo
+<form asp-action="Create" asp-controller="" method="post" >
+    <span asp-validation-for="YourName"></span>
+    <label asp-for="YourName"></label>
+    <input asp-for="YourName"><br>
+    <span asp-validation-for="DojoLocation"></span>
+    <label asp-for="DojoLocation"></label>
+    <select asp-for="DojoLocation">
+        <option>San Jose</option>
+        <option>California</option>
+    </select><br>
+    <span asp-validation-for="FavouriteLanguage"></span>
+    <label asp-for="FavouriteLanguage"></label>
+    <select asp-for="FavouriteLanguage">
+        <option>C#</option>
+        <option>Java</option>
+    </select><br>
+    <span asp-validation-for="Comment"></span>
+    <label asp-for="Comment">(optional):</label><br>
+    <textarea asp-for="Comment" cols="30" rows="10"></textarea><br>
+    <button type="submit">Submit</button>    
+</form>
