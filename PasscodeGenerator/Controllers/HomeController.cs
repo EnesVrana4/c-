@@ -19,11 +19,15 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+                HttpContext.Session.Clear();
+
         return View();
     }
 
     public IActionResult Privacy()
     {
+                HttpContext.Session.Clear();
+
         return View();
     }
     [HttpGet("Generate")]
@@ -62,6 +66,8 @@ public class HomeController : Controller
     }
     public IActionResult Add()
     {
+                HttpContext.Session.Clear();
+
         return View();
     }
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
