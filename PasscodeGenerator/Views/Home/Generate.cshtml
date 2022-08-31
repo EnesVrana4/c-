@@ -1,11 +1,9 @@
+<h3>Random passcode (passcode #@Context.Session.GetInt32("Count")) </h3>
 
+<h3>@ViewBag.finalString </h3>
 
-    @Context.Session.GetInt32("Count")
+<a href="/Generate">Generate</a>
 
-        <h3>Random passcode (passcode #) </h3>
-        
-        <h3>@ViewBag.finalString </h3>
-    <a href="/Generate">Generate</a>
-    <br>
-    <a href="/Clear">Clear</a>
+<br>
 
+<a href="/Clear">Clear</a>
