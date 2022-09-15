@@ -1,0 +1,39 @@
+@model User
+<div style="display: flex;">
+
+<div class="col-sm-9"></div>
+    <a href="/bright_ideas" class="col-sm-2">Bright Ideas</a>
+    <a href="/logout" class="col-sm-2">logout</a>
+</div>
+<div style="display: flex;">
+    <label style="padding-right: 5px" >Name: </label>
+    <p>@ViewBag.CreatorProfile.Name</p>
+</div>
+<div style="display: flex;">
+    <label style="padding-right: 5px" >Alias: </label>
+    <p>@ViewBag.CreatorProfile.Alias</p>
+</div> 
+<div style="display: flex;">
+    <label style="padding-right: 5px">Email: </label>
+    <p>@ViewBag.CreatorProfile.Email</p>
+</div>
+<div style="display: flex;">
+    <label style="padding-right: 5px">Total Numbers Of Posts: </label>
+    <p>@ViewBag.CreatorProfile.Posts.Count</p>
+</div>
+
+<div style="display: flex;">
+    <label style="padding-right: 5px">Total Numbers Of Likes: </label>
+    @{
+        int NrOfLikes = 0;
+        foreach (var item in@ViewBag.CreatorProfile.Posts)
+        {
+            NrOfLikes += @item.Likes.Count;
+
+           
+        }
+}
+    <p>@NrOfLikes</p>
+
+
+</div>

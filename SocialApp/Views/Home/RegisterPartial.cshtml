@@ -1,0 +1,61 @@
+@model User
+
+<form action="/Register" method="post">
+    <label class="display-4 text-left">Register!</label>
+<br>
+<br>
+    <div class="row mb-4">
+        <div class="col-4">
+            <div class="form-outline">
+                <input  class="form-control" asp-for="FirstName" placeholder="Your Firstname" />
+                <label class="form-label" asp-for="FirstName" >FirstName: </label>
+                <span asp-validation-for="FirstName"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-4">
+            <div class="form-outline">
+                <input  class="form-control" asp-for="LastName" placeholder="Your Lastname"/>
+                <label class="form-label" asp-for="LastName" >LastName: </label>
+                <span asp-validation-for="LastName"></span>
+            </div>
+        </div>
+    </div>
+     <div class="row mb-4">
+        <div class="col-4">
+            <div class="form-outline">
+                <input  class="form-control" asp-for="Email" placeholder="Your Email"/>
+                <label class="form-label" asp-for="Email" >Email:</label>
+                <span asp-validation-for="Email"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-4">
+            <div class="form-outline">
+                <input  class="form-control" asp-for="Password" placeholder="Write a password" />
+                <label class="form-label" asp-for="Password" >Password:</label>
+                <span asp-validation-for="Password"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-4">
+            <div class="form-outline">
+                <input  class="form-control" asp-for="Confirm" placeholder="Rewrite the password" />
+                <label class="form-label" asp-for="Confirm" >Confirm Password:</label>
+                <span asp-validation-for="Confirm"></span>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Sign Up Now</button>
+
+    
+</form>

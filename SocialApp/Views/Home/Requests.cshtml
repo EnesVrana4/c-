@@ -1,0 +1,55 @@
+
+<div class="row">
+    <div class="col-sm-3">
+        <table class="table">
+            <h3>Add Friends</h3>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var perdorues in ViewBag.perdoruesit)
+                {
+             
+                    <tr>
+                        <td>@perdorues.FirstName </td>
+                        <td><a href="/Send/@perdorues.UserId" class="btn btn-success">Send Request</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+@* Requests *@
+<div class="col-sm-3">
+    <h3>Requests</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var request in ViewBag.requests)
+            {
+             
+                <tr>
+                    <td>@request.RequestId</td>
+                    <td>@request.Sender.FirstName @request.Reciver.FirstName</td>
+                    <td>
+                        <a href="/Accept/@request.RequestId" class="btn btn-primary">Accept</a>
+                        <a href="/Decline/@request.RequestId" class="btn btn-dangerous">Decline</a>
+                    </td>
+                </tr>
+                
+            }
+        </tbody>
+    </table>
+
+</div>

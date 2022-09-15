@@ -1,0 +1,65 @@
+@model Post
+<div class="col-sm-3"></div>
+<label class="display-6 col-sm-11">Hi @ViewBag.iLoguari.Alias!</label>
+    <a href="/logout" class="col-sm-2">logout</a>
+</div>
+<br>
+<form action="/Post/Add" method="post" class="mx-1 mx-md-4">
+
+    <div class="d-flex flex-row align-items-center mb-4">
+        <div class="form-outline flex-fill mb-0">
+            <input asp-for="PostContent" class="form-control" name="text" />
+            <span asp-validation-for="PostContent"></span>
+        </div>
+        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+        <button type="submit" class="btn btn-primary btn-lg">Add Idea</button>
+    </div>
+    </div>
+</form>
+<div style="display: flex;">
+    <div class="col-sm-1"></div>
+    <div>
+        
+        @foreach (var post in ViewBag.posts)
+        {
+                <div style="display: flex;">
+                    <a style="padding-right: 10px" href="/users/@post.Creator.UserId">@post.Creator.Alias</a>
+                    <p style="padding-right: 10px"> says:</p>
+                
+                    <p style="border: 2px solid black; padding: 5px">@post.PostContent</p>
+                </div>
+                <div style="display: flex;">
+                    <a style="padding-right: 5px" href="/bright_ideas/@post.PostId">@post.Likes.Count people</a>
+                    <p> like this.</p>
+                </div>
+                @if (@post.Creator.UserId == @ViewBag.iLoguari.UserId)
+                        {
+                            <a href="/Post/Delete/@post.PostId" class="btn btn-primary">Delete</a>
+                        }
+                        {
+                        var id = 0;
+                        @foreach (var like in post.Likes)
+                        {
+        
+                            if (like.UserId == @ViewBag.iLoguari.UserId)
+                            {
+                                id = like.PostId;
+                                break;
+                            }
+                        }
+                        @if (id == 0)
+                        {
+                            <a href="/Post/Like/@post.PostId" class="btn btn-primary">Like</a>
+                        }
+                        else{
+                                <a href="/Post/Unlike/@ViewBag.iLoguari.UserId/@post.PostId" class="btn btn-primary">Unlike</a> 
+                        }
+                        }
+                        <br>
+                        <br>
+                        <br>
+                        
+            
+        }
+    </div>
+</div>  

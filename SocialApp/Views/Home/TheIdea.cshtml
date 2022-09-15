@@ -1,0 +1,30 @@
+
+    <div class="col-sm-9"></div>
+        <a href="/bright_ideas" class="col-sm-2">Bright Ideas</a>
+        <a href="/logout" class="col-sm-2">logout</a>
+    </div>
+<div>   
+    <div style="display: flex;">
+        <a style="padding-right: 10px" href="/users/@ViewBag.posts.Creator.UserId">@ViewBag.posts.Creator.Alias</a>
+        <p style="padding-right: 10px"> says:</p>
+
+        <p style="border: 2px solid black; padding: 5px">@ViewBag.posts.PostContent</p>
+</div>
+
+    <div class="col-sm-4"></div>    
+    <table class="table offset-1">
+       
+        <tr>
+            <td>Alias</td>
+            <td> Name </td>
+        </tr>
+        @foreach (var item in @ViewBag.posts.Likes)
+    {
+        <tr>
+            <td><a href="/users/@item.UseriQePelqen.UserId">@item.UseriQePelqen.Alias</a></td>
+            <td> @item.UseriQePelqen.Name </td>
+        </tr>
+       
+    }
+    </table>
+</div>

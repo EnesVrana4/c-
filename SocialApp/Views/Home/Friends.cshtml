@@ -1,0 +1,29 @@
+@model Request
+@* Frendsat *@
+<div class="col-sm-3">
+    <h3>Friends</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var miqte in ViewBag.miqte)
+            {
+                <tr>
+                    @if(miqte.SenderId == ViewBag.iLoguari.UserId){
+                        <td>@miqte.Reciver.FirstName</td>
+                    }
+                    else
+                    {
+                        <td>@miqte.Sender.FirstName</td>
+                    }
+                    <td><a href="/Remove/@miqte.RequestId" class="btn btn-danger">Remove</a></td>
+                </tr>
+            }
+                
+        </tbody>
+    </table>
+</div> 
