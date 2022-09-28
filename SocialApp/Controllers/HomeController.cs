@@ -211,26 +211,8 @@ public class HomeController : Controller
 public IActionResult Friends()
 {
     int id = (int)HttpContext.Session.GetInt32("userId");
+    ViewBag.iLoguari = _context.Users.FirstOrDefault(e => e.UserId == id);
    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
      ViewBag.miqte = _context.Requests.Where(e => (e.SenderId == id) || (e.ReciverId == id)).Include(e => e.Reciver).Include(e => e.Sender).Where(e => e.Accepted == true).ToList();
 
     return View();
@@ -262,18 +244,15 @@ public IActionResult Requests()
         //Filtorjme listen e gjithe userave ne menyre qe miqte dhe ata qe u kemi nisur ose na kane nisur request te mos dalin tek users e tjere.
         for (int i = 0; i < LIST4.Count; i++)
         {
-            var test22= LIST4[i].Requests.Except(rq);
+            // var test22= LIST4[i].Requests.Except(rq);
             
             for (int j = 0; j < rq.Count; j++)
             {
-                if (rq[j].SenderId == LIST4[i].UserId || rq[j].ReciverId == LIST4[i].UserId )
+                if (rq[j].SenderId == (int)HttpContext.Session.GetInt32("userId") || rq[j].ReciverId== (int)HttpContext.Session.GetInt32("userId") )
             {
                 LIST4.Remove(LIST4[i]);
             }
-                if (HttpContext.Session.GetInt32("DeleteFromPerdoruesitId")  == LIST4[i].UserId || HttpContext.Session.GetInt32("userId") == LIST4[i].UserId )
-            {
-                LIST4.Remove(LIST4[i]);
-            }
+           
             
             }
             for (int z = 0; z < miqte.Count; z++)
@@ -289,15 +268,14 @@ public IActionResult Requests()
         }
         
         // lista e filtruar ruhet ne viewbag
-        ViewBag.perdoruesit= LIST4;
         
         //shfaqim gjith requests
         ViewBag.requests = _context.Requests.Include(e=>e.Reciver).Include(e=>e.Sender).Where(e => e.ReciverId == id).Where(e => e.Accepted == false).ToList();
+        
+        // // shfaq gjith miqte
 
-        // shfaq gjith miqte
-
-        ViewBag.miqte = _context.Requests.Where(e => (e.SenderId == id) || (e.ReciverId == id)).Include(e=>e.Reciver).Include(e=>e.Sender).Where(e=>e.Accepted ==true).ToList();
-        //Marr te loguarin me te dhena
+        // ViewBag.miqte = _context.Requests.Where(e => (e.SenderId == id) || (e.ReciverId == id)).Include(e=>e.Reciver).Include(e=>e.Sender).Where(e=>e.Accepted ==true).ToList();
+        // //Marr te loguarin me te dhena
         ViewBag.iLoguari = _context.Users.FirstOrDefault(e => e.UserId == id);
 
 

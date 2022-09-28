@@ -8,69 +8,69 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SocialApp
 build_property.RootNamespace = SocialApp
-build_property.ProjectDir = C:\Users\User\Documents\C#2022\SocialApp\
+build_property.ProjectDir = c:\Users\User\Documents\C#2022\SocialApp\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\User\Documents\C#2022\SocialApp
+build_property.MSBuildProjectDirectory = c:\Users\User\Documents\C#2022\SocialApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/User/Documents/C\#2022/SocialApp/Views/Home/Friends.cshtml]
+[c:/Users/User/Documents/C\#2022/SocialApp/Views/Home/Friends.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGcmllbmRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/C\#2022/SocialApp/Views/Home/HomePage.cshtml]
+[c:/Users/User/Documents/C\#2022/SocialApp/Views/Home/HomePage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lUGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/C\#2022/SocialApp/Views/Home/Index.cshtml]
+[c:/Users/User/Documents/C\#2022/SocialApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/C\#2022/SocialApp/Views/Home/LoginPartial.cshtml]
+[c:/Users/User/Documents/C\#2022/SocialApp/Views/Home/LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/C\#2022/SocialApp/Views/Home/MyProfile.cshtml]
+[c:/Users/User/Documents/C\#2022/SocialApp/Views/Home/MyProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeVByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/C\#2022/SocialApp/Views/Home/Privacy.cshtml]
+[c:/Users/User/Documents/C\#2022/SocialApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/C\#2022/SocialApp/Views/Home/Register.cshtml]
+[c:/Users/User/Documents/C\#2022/SocialApp/Views/Home/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/C\#2022/SocialApp/Views/Home/RegisterPartial.cshtml]
+[c:/Users/User/Documents/C\#2022/SocialApp/Views/Home/RegisterPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3RlclBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/C\#2022/SocialApp/Views/Home/Requests.cshtml]
+[c:/Users/User/Documents/C\#2022/SocialApp/Views/Home/Requests.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXF1ZXN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/C\#2022/SocialApp/Views/Home/TheIdea.cshtml]
+[c:/Users/User/Documents/C\#2022/SocialApp/Views/Home/TheIdea.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaGVJZGVhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/C\#2022/SocialApp/Views/Shared/Error.cshtml]
+[c:/Users/User/Documents/C\#2022/SocialApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/C\#2022/SocialApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/User/Documents/C\#2022/SocialApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/C\#2022/SocialApp/Views/_ViewImports.cshtml]
+[c:/Users/User/Documents/C\#2022/SocialApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/C\#2022/SocialApp/Views/_ViewStart.cshtml]
+[c:/Users/User/Documents/C\#2022/SocialApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Documents/C\#2022/SocialApp/Views/Shared/_Layout.cshtml]
+[c:/Users/User/Documents/C\#2022/SocialApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-b7jbymv7du

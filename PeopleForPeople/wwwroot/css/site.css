@@ -1,0 +1,174 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 80px;
+  background-color: rgb(194, 231, 255);
+}
+.pfp{
+  font-size: 40px;
+  font-family: cursive;
+  font-weight: bold;
+  margin-left: 140px;
+  width: 800px;
+  margin: 0 auto;
+  color: white;
+}
+.container{
+  background-color:rgb(240, 252, 255);
+}
+.container2{
+  padding: 25px;
+  width: 400px;
+
+}
+.FOOTER{
+  width: 800px;
+  margin:  auto;
+  padding: 0px;
+}
+
+
+
+.nav-head{
+  width: 800px;
+  
+  margin: 0 auto;
+  background: repeating-linear-gradient(
+  45deg,
+  #606dbc,
+  #606dbc 5px,
+  #465298 10px,
+  #465298 5px
+);
+}
+  
+
+.logo{
+  width: 300px;
+  height: 300px;
+}
+.logo.img{
+  max-width: fit-content;
+}
+.display-inline{
+  display: inline;
+}
+
+.display-flex{
+  display: flex;
+}
+.space-between{
+  justify-content: space-between;
+}
+.space-around{
+  justify-content: space-around;
+}
+.align-center{
+  align-items: center;
+}
+.vertical-align-middle{
+  vertical-align: middle;
+}
+#createcase{
+  font-size: 20px;
+  margin-left: 400px;
+  margin-right: -145px ;
+  padding-right: -100px;
+}
+#logout{
+  font-size: 20px;
+  margin-left: -400px;
+  padding-left: 40px;
+  padding-right: 40px
+}
+#inbox{
+  font-size: 20px;
+  margin-left: -500px;
+  padding-left: 40px;
+  margin-right: 20px
+}
+.case{
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+}
+.post-nav{
+  margin: 20px;
+  background-color: rgb(237, 237, 237);
+  padding: 2px 15px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+.post-nav label{
+  text-decoration: underline;
+}
+.post-nav h4{
+  font-weight: bold;
+}
+#postedby{
+  color: grey;
+}
+.case-content{
+  margin: 20px;
+  width: auto;
+
+}
+.case-content h4{
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.case-content p{
+  font-style: italic;
+}
+.case-content a{
+  margin-left: 550px;
+  font-size: large;
+}
+.case-content h5{
+  color: grey;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#delete{
+  padding: 20px;
+}
+#case-address{
+  font-size: medium;
+  font-style: normal;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 10px;
+}
+.thecase{
+  background: repeating-radial-gradient(
+  circle,
+  rgb(205, 254, 255),
+  rgb(233, 253, 255) 10px,
+  rgb(221, 254, 255) 10px, 
+ rgb(255, 255, 255) 20px
+);
+}
+.background-white{
+  background-color: white;
+}
+#description{
+  margin: 20px 0px;
+  padding: 20px;
+  background-color: rgb(240, 255, 251);
+  padding: 2px 15px;
+  border-radius: 5px;
+}

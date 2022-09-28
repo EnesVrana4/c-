@@ -1,0 +1,54 @@
+@model Case
+
+
+<head>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PeopleForPeople.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+</head>
+<header class="HEADER">
+        <nav class="nav-head">
+            <div class="container-fluid HEADER display-flex ">
+                <a class="navbar-brand pfp vertical-align-bottom" asp-area="" asp-controller="Home" asp-action="HomePage">PFP</a>
+                <div class="display-flex vertical-align-middle">
+                    <a href="/Case/Add" class="navbar-brand pfp vertical-align-middle" id="createcase">Raport a Case</a>
+                    <a href="Logout" class="navbar-brand pfp "  id="inbox">
+                        <i class="fa fa-inbox" ></i>
+                    </a>
+                    <a href="Logout" class="navbar-brand pfp "  id="logout">
+                        <span class="glyphicon glyphicon-log-out" id="logout" ></span>
+                    </a>
+                </div>                
+            </div>
+        </nav>
+</header>
+
+<div class="case thecase">
+        <nav class="post-nav display-flex vertical-align-middle space-between ">
+            <div class="">
+                <h4>@ViewBag.Cases.FamilySurname Family, @ViewBag.Cases.Tittle</h4>
+                <p id="postedby">Posted by <label>@ViewBag.Cases.Creator.FirstName @ViewBag.Cases.Creator.LastName</label> at @ViewBag.Cases.CreatedAt</p>
+            </div>
+            @* <div id="delete">
+                @if (@ViewBag.Cases.Creator.UserId == @ViewBag.iLoguari.UserId)
+                        {
+                            <a href="/Case/Delete/@ViewBag.Cases.CaseId" class="btn btn-primary ">Delete</a>
+                        }
+            </div> *@
+        </nav>
+        <div class="case-content post-nav background-white">
+            <p id="case-address">@ViewBag.Cases.City City, Address: @ViewBag.Cases.Address </p>
+            <div id="description">
+                <h3>Description</h3>
+                <p>@ViewBag.Cases.Description</p><br><br>
+            </div>
+                <a href="/Chats" class="btn btn-primary ">Offer Help</a><br><br>
+        </div>
+            
+    </div>

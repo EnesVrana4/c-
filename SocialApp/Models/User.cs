@@ -29,9 +29,9 @@ public class User
     // public List<Like> Liked { get; set; } = new List<Like>(); 
     public List<Request> Requests {get;set;} = new List<Request>();
     public List<Post> Posts { get; set; } = new List<Post>(); 
-    public List<Request> Sender {get;set;} = new List<Request>();
-    public List<Request> SenderRequests {get;set;} = new List<Request>();
-    public List<Request> ReciverRequests {get;set;} = new List<Request>();
+    // public List<Request> Sender {get;set;} = new List<Request>();
+    // public List<Request> SenderRequests {get;set;} = new List<Request>();
+    // public List<Request> ReciverRequests {get;set;} = new List<Request>();
     public List<Like> Likes {get;set;}= new List<Like>();
     public List<Comment> Comments { get; set; } = new List<Comment>();
     public List<CommentLike> CommentLikes { get; set; } = new List<CommentLike>();
