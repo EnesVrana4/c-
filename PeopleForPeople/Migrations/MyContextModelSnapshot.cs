@@ -51,7 +51,7 @@ namespace PeopleForPeople.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("CaseId");
@@ -67,16 +67,15 @@ namespace PeopleForPeople.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("CaseId")
+                    b.Property<int>("CaseId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("ChatId");
 
-                    b.HasIndex("CaseId")
-                        .IsUnique();
+                    b.HasIndex("CaseId");
 
                     b.HasIndex("UserId");
 
@@ -88,7 +87,7 @@ namespace PeopleForPeople.Migrations
                     b.Property<string>("MessageId")
                         .HasColumnType("varchar(255)");
 
-                    b.Property<int?>("ChatId")
+                    b.Property<int>("CaseId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
@@ -98,12 +97,12 @@ namespace PeopleForPeople.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("MessageId");
 
-                    b.HasIndex("ChatId");
+                    b.HasIndex("CaseId");
 
                     b.HasIndex("UserId");
 
@@ -156,7 +155,9 @@ namespace PeopleForPeople.Migrations
                 {
                     b.HasOne("PeopleForPeople.Models.User", "Creator")
                         .WithMany("Cases")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Creator");
                 });
@@ -164,12 +165,16 @@ namespace PeopleForPeople.Migrations
             modelBuilder.Entity("PeopleForPeople.Models.Chat", b =>
                 {
                     b.HasOne("PeopleForPeople.Models.Case", "ConnectedWith")
-                        .WithOne("Chat")
-                        .HasForeignKey("PeopleForPeople.Models.Chat", "CaseId");
+                        .WithMany()
+                        .HasForeignKey("CaseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("PeopleForPeople.Models.User", "User")
                         .WithMany("Chats")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("ConnectedWith");
 
@@ -178,13 +183,17 @@ namespace PeopleForPeople.Migrations
 
             modelBuilder.Entity("PeopleForPeople.Models.Message", b =>
                 {
-                    b.HasOne("PeopleForPeople.Models.Chat", "ConnectedTo")
+                    b.HasOne("PeopleForPeople.Models.Case", "ConnectedTo")
                         .WithMany()
-                        .HasForeignKey("ChatId");
+                        .HasForeignKey("CaseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("PeopleForPeople.Models.User", "Creator")
                         .WithMany("CreatedMessages")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("ConnectedTo");
 
@@ -198,11 +207,6 @@ namespace PeopleForPeople.Migrations
                         .HasForeignKey("CreatedCaseUserId");
 
                     b.Navigation("CreatedCase");
-                });
-
-            modelBuilder.Entity("PeopleForPeople.Models.Case", b =>
-                {
-                    b.Navigation("Chat");
                 });
 
             modelBuilder.Entity("PeopleForPeople.Models.User", b =>

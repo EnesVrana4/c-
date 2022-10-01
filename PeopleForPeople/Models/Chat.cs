@@ -7,11 +7,11 @@ namespace PeopleForPeople.Models;
 public class Chat {
 [Key]
 public int ChatId {get; set; }
-public int? UserId {get; set;}
-public int? CaseId {get; set;}
+public int UserId {get; set;}
+public int CaseId {get; set;}
 public User? User {get; set;}
 public Case? ConnectedWith {get; set;}
-List<Message> Messages {get; set;}
+// List<Message> Messages {get; set;}
 
 
 }

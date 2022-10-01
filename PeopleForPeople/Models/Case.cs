@@ -19,9 +19,10 @@ public string FamilySurname {get; set;}
 public string City {get; set;}
 [Required]
 public string Address {get; set;}
-public int? UserId { get; set; }
+public int UserId { get; set; }
 public User? Creator { get; set; }
-public Chat? Chat {get; set;}
+List<Message> Messages {get; set;}
+
 public DateTime CreatedAt { get; set; } = DateTime.Now;
 public DateTime UpdatedAt { get; set; } = DateTime.Now;
 

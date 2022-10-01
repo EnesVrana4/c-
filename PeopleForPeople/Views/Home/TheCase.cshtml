@@ -21,7 +21,7 @@
                     <a href="Logout" class="navbar-brand pfp "  id="inbox">
                         <i class="fa fa-inbox" ></i>
                     </a>
-                    <a href="Logout" class="navbar-brand pfp "  id="logout">
+                    <a href="/Logout" class="navbar-brand pfp "  id="logout">
                         <span class="glyphicon glyphicon-log-out" id="logout" ></span>
                     </a>
                 </div>                
@@ -32,23 +32,32 @@
 <div class="case thecase">
         <nav class="post-nav display-flex vertical-align-middle space-between ">
             <div class="">
-                <h4>@ViewBag.Cases.FamilySurname Family, @ViewBag.Cases.Tittle</h4>
-                <p id="postedby">Posted by <label>@ViewBag.Cases.Creator.FirstName @ViewBag.Cases.Creator.LastName</label> at @ViewBag.Cases.CreatedAt</p>
+                <h4>@ViewBag.theCase.FamilySurname Family, @ViewBag.theCase.Tittle</h4>
+                <p id="postedby">Posted by <label>@ViewBag.theCase.Creator.FirstName @ViewBag.theCase.Creator.LastName</label> at @ViewBag.theCase.CreatedAt</p>
             </div>
-            @* <div id="delete">
-                @if (@ViewBag.Cases.Creator.UserId == @ViewBag.iLoguari.UserId)
-                        {
-                            <a href="/Case/Delete/@ViewBag.Cases.CaseId" class="btn btn-primary ">Delete</a>
-                        }
-            </div> *@
+            <div id="delete">
+                
+            @if (@ViewBag.theCase.UserId == @ViewBag.iLoguari.UserId)
+                {
+                    <a href="/Case/Delete/@ViewBag.theCase.CaseId" class="btn btn-primary ">Delete</a>
+                }
+            </div>
         </nav>
         <div class="case-content post-nav background-white">
-            <p id="case-address">@ViewBag.Cases.City City, Address: @ViewBag.Cases.Address </p>
+            <p id="case-address">@ViewBag.theCase.City City, Address: @ViewBag.theCase.Address </p>
             <div id="description">
                 <h3>Description</h3>
-                <p>@ViewBag.Cases.Description</p><br><br>
+                <p>@ViewBag.theCase.Description</p><br><br>
             </div>
-                <a href="/Chats" class="btn btn-primary ">Offer Help</a><br><br>
+            @foreach (var chat in @ViewBag.CaseChatWithUsers)
+            {
+                @if (chat.UserId == @ViewBag.iLoguari.UserId)
+                {
+                    <a href="/RemoveUserFromChat/@ViewBag.theCase.CaseId" class="btn btn-primary " id="RemoveUserFromChat_Button">I'm done here</a><br><br>
+                    return;
+                }
+                
+            }
+                <a href="/AddUserToChat/@ViewBag.theCase.CaseId" class="btn btn-primary ">Offer Help</a><br><br>
         </div>
-            
     </div>

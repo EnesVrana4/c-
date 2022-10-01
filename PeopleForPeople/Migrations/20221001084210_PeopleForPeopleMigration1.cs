@@ -60,7 +60,7 @@ namespace PeopleForPeople.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Address = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    UserId = table.Column<int>(type: "int", nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
@@ -71,7 +71,8 @@ namespace PeopleForPeople.Migrations
                         name: "FK_Cases_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "UserId");
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -81,8 +82,8 @@ namespace PeopleForPeople.Migrations
                 {
                     ChatId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    UserId = table.Column<int>(type: "int", nullable: true),
-                    CaseId = table.Column<int>(type: "int", nullable: true)
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    CaseId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -91,12 +92,14 @@ namespace PeopleForPeople.Migrations
                         name: "FK_Chats_Cases_CaseId",
                         column: x => x.CaseId,
                         principalTable: "Cases",
-                        principalColumn: "CaseId");
+                        principalColumn: "CaseId",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Chats_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "UserId");
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -108,23 +111,25 @@ namespace PeopleForPeople.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     MessageContent = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    UserId = table.Column<int>(type: "int", nullable: true),
-                    ChatId = table.Column<int>(type: "int", nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    CaseId = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Messages", x => x.MessageId);
                     table.ForeignKey(
-                        name: "FK_Messages_Chats_ChatId",
-                        column: x => x.ChatId,
-                        principalTable: "Chats",
-                        principalColumn: "ChatId");
+                        name: "FK_Messages_Cases_CaseId",
+                        column: x => x.CaseId,
+                        principalTable: "Cases",
+                        principalColumn: "CaseId",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Messages_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "UserId");
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -136,8 +141,7 @@ namespace PeopleForPeople.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Chats_CaseId",
                 table: "Chats",
-                column: "CaseId",
-                unique: true);
+                column: "CaseId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Chats_UserId",
@@ -145,9 +149,9 @@ namespace PeopleForPeople.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Messages_ChatId",
+                name: "IX_Messages_CaseId",
                 table: "Messages",
-                column: "ChatId");
+                column: "CaseId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Messages_UserId",
@@ -163,10 +167,10 @@ namespace PeopleForPeople.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Messages");
+                name: "Chats");
 
             migrationBuilder.DropTable(
-                name: "Chats");
+                name: "Messages");
 
             migrationBuilder.DropTable(
                 name: "Cases");
