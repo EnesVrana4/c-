@@ -200,19 +200,8 @@ public class HomeController : Controller
         };
         _context.Chats.Add(newChat);
         _context.SaveChanges();
-
-        // User currentUser = _context.Users.FirstOrDefault(e => e.UserId == id);
-        // List<User> usersInChat = new List<User>();
-        // usersInChat.Add(currentUser);
-
-        // Chat caseChat = new Chat(){
-        //     CaseId = newCase.CaseId,
-        //     UserId = id
-        // };
-        // Console.WriteLine("TEST here{0}", newCase.CaseId);
-
-        // _context.Chats.Add(caseChat); 
- 
+       
+       
         return RedirectToAction("HomePage");
         
         
@@ -230,6 +219,12 @@ public class HomeController : Controller
         Case deleteCase = _context.Cases.First(e => e.CaseId == id);
         _context.Cases.Remove(deleteCase);
         _context.SaveChanges();
+        List<Message> MessagesOfChat = _context.Messages.Where(a => a.CaseId == id).ToList();
+        foreach (var message in MessagesOfChat)
+        {
+            _context.Messages.Remove(message);
+            _context.SaveChanges();
+        }
         List<Chat> ChatsOfCase = _context.Chats.Where(a => a.CaseId == id).ToList();
         foreach (var chatofcase in ChatsOfCase)
         {
@@ -247,28 +242,15 @@ public class HomeController : Controller
         {
             return RedirectToAction("Login");
         }
-        ViewBag.iLoguari = _context.Users.FirstOrDefault(e => e.UserId == id);
+        int idFromSession = (int)HttpContext.Session.GetInt32("userId");           
+        ViewBag.iLoguari = _context.Users.FirstOrDefault(e => e.UserId == idFromSession);
         ViewBag.theCase = _context.Cases.Include(a => a.Creator).First(a=> a.CaseId == id);
-        // Case theCase = _context.Cases.Include(e => e.Creator).First(e=> e.CaseId == id);
-        // int theCaseId = ViewBag.theCase.CaseId;
-        // List<Chat> chats = _context.Chats.FirstOrDefault(e => e.CaseId == theCaseId).ToList();
         ViewBag.CaseChatWithUsers = _context.Chats.Where(e => e.CaseId == id).ToList();
         
         
         return View("TheCase");
     }
 
-    [HttpGet("Chats")]
-    public IActionResult Chats()
-    {
-        if (HttpContext.Session.GetInt32("userId") == null)
-        {
-            return RedirectToAction("Login");
-        }
-        int id = (int)HttpContext.Session.GetInt32("userId");            
-        ViewBag.iLoguari = _context.Users.FirstOrDefault(e => e.UserId == id);
-        return View("GroupChats");
-    }
 
     [HttpGet("/AddUserToChat/{caseId}")]
     public IActionResult AddUserToChat(int caseId)
@@ -277,17 +259,17 @@ public class HomeController : Controller
         {
             return RedirectToAction("Login");
         }
-        int id = (int)HttpContext.Session.GetInt32("userId");  
+        int idFromSession = (int)HttpContext.Session.GetInt32("userId");  
 
         Chat newUserInChat = new Chat(){
             CaseId = caseId,
-            UserId = id
+            UserId = idFromSession
         };
 
         _context.Chats.Add(newUserInChat);
         _context.SaveChanges();
 
-        return RedirectToAction("TheCase", new { id = caseId, });
+        return RedirectToAction("TheCase", new { id = caseId });
         // return RedirectToAction("TheCase(int id)");
     }
     [HttpGet("/RemoveUserFromChat/{caseId}")]
@@ -307,9 +289,8 @@ public class HomeController : Controller
         // return RedirectToAction("TheCase(int id)");
     }
 
-
-    [HttpGet("Chat/{chatId}")]
-    public IActionResult groupChat(int chatId)
+    [HttpGet("/Chats")]
+    public IActionResult Chats()
     {
         if (HttpContext.Session.GetInt32("userId") == null)
         {
@@ -317,22 +298,52 @@ public class HomeController : Controller
         }
         int idFromSession = (int)HttpContext.Session.GetInt32("userId");            
         ViewBag.iLoguari = _context.Users.FirstOrDefault(e => e.UserId == idFromSession);
-        // ViewBag.Messages = _context.Messages.OrderByDescending(a => a.CreatedAt).ToList();
+        ViewBag.chatsOfUser = _context.Chats.Where(chat => chat.UserId == idFromSession).Include(a => a.ConnectedWith).ToList();
+        return View("GroupChats");
+    }
+
+
+    [HttpGet("Chat/{caseId}")]
+    public IActionResult groupChat(int caseId)
+    {
+        if (HttpContext.Session.GetInt32("userId") == null)
+        {
+            return RedirectToAction("Login");
+        }
+        int idFromSession = (int)HttpContext.Session.GetInt32("userId");            
+        ViewBag.iLoguari = _context.Users.FirstOrDefault(e => e.UserId == idFromSession);
+        ViewBag.caseIdToView = caseId;
+        ViewBag.Messages = _context.Messages.OrderByDescending(a => a.CreatedAt).Include(b => b.Creator).Where(a => a.CaseId == caseId).ToList();
         return View("GroupChat");
     }
-    [HttpPost("Chat")]
-    public IActionResult GroupChat()
-    {
+
+    [HttpPost("/AddMessage/{id}")]
+    public IActionResult addMessage(Message messageFromView , int id){
+        if (ModelState.IsValid)
+        {
+            
         if (HttpContext.Session.GetInt32("userId") == null)
         {
             return RedirectToAction("Login");
         }
+        int idFromSession = (int)HttpContext.Session.GetInt32("userId"); 
 
-        int idFromSession = (int)HttpContext.Session.GetInt32("userId");            
-        ViewBag.iLoguari = _context.Users.FirstOrDefault(e => e.UserId == idFromSession);
-        return RedirectToAction("groupChat");
+        Message newMessage = new Message(){
+            MessageContent = messageFromView.MessageContent,
+            UserId = idFromSession,
+            CaseId = id
+        };
+        _context.Messages.Add(newMessage);
+        _context.SaveChanges();
+        }
+
+        return RedirectToAction("groupChat", new { caseId = id });
+
+
+
+
+
     }
-
 }
 
 

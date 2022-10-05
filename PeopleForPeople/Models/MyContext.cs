@@ -10,27 +10,5 @@ public class MyContext : DbContext
     public DbSet<Chat> Chats { get; set; }
     public DbSet<Message> Messages { get; set; }
     
-    // protected override void OnModelCreating(ModelBuilder modelBuilder)
-    // {
-    //     modelBuilder.Entity<Case>()
-    //         .HasOne(b => b.Chat)
-    //         .WithOne(i => i.ConnectedWith)
-    //         .HasForeignKey<Chat>(b => b.ChatId);
-    // }
-
-    // protected override void OnModelCreating(ModelBuilder modelBuilder)
-    // {
-    //    {
-        
-        
-    //     modelBuilder.Entity<Chat>()
-    //         .HasOne(r => r.ConnectedWith)
-    //         .WithMany(r => r.User)
-    //         .HasForeignKey(r => r.UserId);
-
-        
-            
-    //     }
-    // }
 
 }

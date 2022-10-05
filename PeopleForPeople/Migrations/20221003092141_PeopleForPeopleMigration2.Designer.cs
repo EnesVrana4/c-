@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PeopleForPeople.Models;
 
@@ -10,9 +11,10 @@ using PeopleForPeople.Models;
 namespace PeopleForPeople.Migrations
 {
     [DbContext(typeof(MyContext))]
-    partial class MyContextModelSnapshot : ModelSnapshot
+    [Migration("20221003092141_PeopleForPeopleMigration2")]
+    partial class PeopleForPeopleMigration2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,9 +86,8 @@ namespace PeopleForPeople.Migrations
 
             modelBuilder.Entity("PeopleForPeople.Models.Message", b =>
                 {
-                    b.Property<int>("MessageId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("MessageId")
+                        .HasColumnType("varchar(255)");
 
                     b.Property<int>("CaseId")
                         .HasColumnType("int");

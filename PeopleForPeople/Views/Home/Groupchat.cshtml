@@ -16,30 +16,43 @@
             <div class="container-fluid HEADER display-flex ">
                 <a class="navbar-brand pfp vertical-align-bottom" asp-area="" asp-controller="Home" asp-action="HomePage">PFP</a>
                 <div class="display-flex vertical-align-middle">
-                    <a href="/Case/Add" class="navbar-brand pfp vertical-align-middle" id="createcase">Raport a Case</a>
-                    <a href="/Logout" class="navbar-brand pfp "  id="inbox">
+                    <a href="/Case/Add" class="navbar-brand pfp vertical-align-middle" id="createcase">Report a Case</a>
+                    <a href="/Chats" class="navbar-brand pfp "  id="inbox">
                         <i class="fa fa-inbox" ></i>
                     </a>
-                    <a href="Logout" class="navbar-brand pfp "  id="logout">
+                    <a href="/Logout" class="navbar-brand pfp "  id="logout">
                         <span class="glyphicon glyphicon-log-out" id="logout" ></span>
                     </a>
-                </div>
-                @* <a class="navbar-brand pfp" asp-area="" asp-controller="Home" asp-action="HomePage">PFP</a> *@
-                
+                </div>                
             </div>
         </nav>
 </header>
-<form action="Chat" method="post">
-    <div class="display-flex">
-         <textarea class="form-label" asp-for="MessageContent" name="MessageContent" cols="50" rows="1" placeholder="Type here..."></textarea>
-         <button type="submit" >
-            <i class="fa fa-send" ></i>
-        </button>
-    </div>
-</form>
-@* @foreach(var msg in ViewBag.Messages)
-{
-    <div>
-        <p>@msg.MessageContent</p>
-    </div>
-} *@
+<div id="messagesdiv">
+    <form asp-action="addMessage" asp-route-id="@ViewBag.caseIdToView" method="post">
+        <div class="display-flex sendmessage">
+            <textarea class="form-label" asp-for="MessageContent" name="MessageContent" cols="50" rows="1" placeholder="Type here..."></textarea>
+            <button type="submit" >
+                <i class="fa fa-send" ></i>
+            </button>
+        </div>
+    </form>
+    @foreach(var message in ViewBag.Messages)
+    {
+        @if (message.UserId == ViewBag.iLoguari.UserId)
+        {
+            <div id="MessageFromMe">
+                <h5>Me </h5>
+                <p class="time">@message.CreatedAt.ToShortTimeString()</p>
+                <p>@message.MessageContent</p>
+            </div>
+        }
+        else
+        {
+            <div id="MessageFromOthers">
+                <h5>@message.Creator.FirstName @message.Creator.LastName </h5>
+                <p class="time">@message.CreatedAt.ToShortTimeString()</p>
+                <p>@message.MessageContent</p>
+            </div>
+        }
+    }
+</div>

@@ -6,7 +6,10 @@ namespace PeopleForPeople.Models;
 
 public class Message {
 [Key]
-public string MessageId {get; set; }
+public int MessageId {get; set; }
+[Required]
+[MinLength(1)]
+
 public string MessageContent {get; set;}
 public int UserId {get; set;}
 public int CaseId {get; set;}
