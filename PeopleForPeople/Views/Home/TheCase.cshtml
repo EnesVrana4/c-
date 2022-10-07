@@ -43,21 +43,22 @@
                 }
             </div>
         </nav>
-        <div class="case-content post-nav background-white">
-            <p id="case-address">@ViewBag.theCase.City City, Address: @ViewBag.theCase.Address </p>
-            <div id="description">
-                <h3>Description</h3>
-                <p>@ViewBag.theCase.Description</p><br><br>
-            </div>
-            @foreach (var chat in @ViewBag.CaseChatWithUsers)
-            {
-                @if (chat.UserId == @ViewBag.iLoguari.UserId)
+        <div class="case-content">
+            <h4>Address: @ViewBag.theCase.Address</h4>
+            <h5>@ViewBag.theCase.City City</h5>
+            <div>
+                <img id="pic" src="~/Images/@ViewBag.theCase.Myimage"    asp-append-version="true" alt="">
+            </div><br>
+            <p id="Thecase-Description">Description: <br>@ViewBag.theCase.Description</p>
+
+        
+            
+                @if (ViewBag.theCase.UserId == @ViewBag.iLoguari.UserId)
                 {
-                    <a href="/RemoveUserFromChat/@ViewBag.theCase.CaseId" class="btn btn-primary " id="RemoveUserFromChat_Button">I'm done here</a><br><br>
-                    return;
+                    <a href="/RemoveUserFromChat/@ViewBag.theCase.CaseId" class="btn btn-primary textsize" id="RemoveUserFromChat_Button">I'm done here</a><br><br>
+                    return ;
                 }
-                
-            }
-                <a href="/AddUserToChat/@ViewBag.theCase.CaseId" class="btn btn-primary ">Offer Help</a><br><br>
+            
+                <a href="/AddUserToChat/@ViewBag.theCase.CaseId" class="btn btn-primary textsize " id="RemoveUserFromChat_Button">Offer Help</a><br><br>
         </div>
     </div>

@@ -23,6 +23,13 @@ public int UserId { get; set; }
 public User? Creator { get; set; }
 List<Message> Messages {get; set;}
 
+
+public string Myimage { get; set; } = string.Empty;
+
+[NotMapped]
+public IFormFile Image { get; set; }
+
+
 public DateTime CreatedAt { get; set; } = DateTime.Now;
 public DateTime UpdatedAt { get; set; } = DateTime.Now;
 

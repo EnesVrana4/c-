@@ -36,6 +36,11 @@
             </button>
         </div>
     </form>
+    @if (ViewBag.Messages.Count == 0)
+    {
+        <h3 id="empty-messages" class="">- No Messages Yet -</h3>
+        
+    }
     @foreach(var message in ViewBag.Messages)
     {
         @if (message.UserId == ViewBag.iLoguari.UserId)

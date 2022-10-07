@@ -32,7 +32,28 @@ body {
 .container2{
   padding: 25px;
   width: 400px;
+  
 
+}
+.BigDiv{
+  background-color: rgb(73, 73, 145);
+  margin-bottom: -20px;
+}
+.BigDiv label{
+  color: white;
+}
+.BigDiv button{
+  background-color: rgb(139, 139, 217);
+}
+
+.uploadpic input{
+  height: fit-content;
+}
+.uploadpic{
+  height: fit-content;
+}
+.uploadpic label{
+  color: black;
 }
 .FOOTER{
   width: 800px;
@@ -103,15 +124,19 @@ body {
 .case{
   margin: 20px;
   padding: 10px;
-  border: 1px solid black;
+  border: 2px solid #92baac;
   border-radius: 10px;
-  background-color: white;
+  background:
+  linear-gradient(135deg, #e1ebbd 21px, #92baac  22px, #92baac  24px, transparent 24px, transparent 67px, #92baac  67px, #92baac  69px, transparent 69px),
+  linear-gradient(225deg, #e1ebbd 21px, #92baac  22px, #92baac  24px, transparent 24px, transparent 67px, #92baac  67px, #92baac  69px, transparent 69px)0 64px;
+  background-color:#e1ebbd;
+  background-size: 64px 128px;  
 }
 .post-nav{
   margin: 20px;
   background-color: rgb(237, 237, 237);
   padding: 2px 15px;
-  border: 1px solid grey;
+  border: 1px solid #92baac;
   border-radius: 5px;
 }
 .post-nav label{
@@ -130,17 +155,39 @@ body {
 }
 .case-content h4{
   font-weight: bold;
+  width: fit-content;
+  padding: 8px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: white;
+  margin-bottom: 0px;
+  border: 2px solid #92baac ;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .case-content p{
   font-style: italic;
 }
-.case-content a{
-  margin-left: 550px;
+#moreaboutthis{
+
+  margin-left: 520px;
   font-size: large;
+  background-color:#f1f5e3;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #92baac;
 }
 .case-content h5{
   color: grey;
+  width: fit-content;
+  padding: 8px;
+  margin-top: 0px;
+  background-color:#f1f5e3;
+  border: 2px solid #92baac ;
+  border-top: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  
   font-weight: bold;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -154,13 +201,11 @@ body {
   margin-top: 10px;
 }
 .thecase{
-  background: repeating-radial-gradient(
-  circle,
-  rgb(205, 254, 255),
-  rgb(233, 253, 255) 10px,
-  rgb(221, 254, 255) 10px, 
- rgb(255, 255, 255) 20px
-);
+  background:
+  linear-gradient(135deg, #e1ebbd 21px, #92baac  22px, #92baac  24px, transparent 24px, transparent 67px, #92baac  67px, #92baac  69px, transparent 69px),
+  linear-gradient(225deg, #e1ebbd 21px, #92baac  22px, #92baac  24px, transparent 24px, transparent 67px, #92baac  67px, #92baac  69px, transparent 69px)0 64px;
+  background-color:#e1ebbd;
+  background-size: 64px 128px; 
 }
 .background-white{
   background-color: white;
@@ -197,6 +242,12 @@ padding: 0px 0px 30px 0px;
 margin-bottom: -40px;
 border-bottom-left-radius: 30px;
 border-bottom-right-radius: 30px;
+}
+.textsize {
+  font-size: 20px;
+}
+#thecase-description{
+
 }
 
 #MessageFromMe{
@@ -247,3 +298,41 @@ padding-top: 15px;
   font-size: 11px;
   color: rgb(152, 152, 152);
 }
+#pic{
+  margin-left: 10%;
+  max-width: 80%;
+  padding:5% 15%;
+  background-color: #f1f5e3;
+  border-radius: 40px;
+  border: 2px solid #92baac;
+}
+#Thecase-Description{
+
+    margin:0% 10% 5% 10%;
+  
+    
+    padding:1% 1%;
+    background-color: #f1f5e3;
+    border-radius: 4px;
+    border: 2px solid #92baac;
+  }
+
+  #empty{
+    text-align: center;
+  }
+  #empty-messages{
+    width: fit-content;
+    background-color: beige;
+    padding: 1%;
+    border-radius: 2px;
+    margin-left: 35%;
+
+  }
+  #logo{
+    width: 350px;
+    position: absolute;
+    right: 250px;
+    top: 200px;
+    background-color: white;
+    border-radius: 100%;
+  }

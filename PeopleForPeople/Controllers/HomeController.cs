@@ -13,13 +13,16 @@ namespace PeopleForPeople.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly IWebHostEnvironment WebHostEnvironment;
+
     private MyContext _context;
 
     // here we can "inject" our context service into the constructor
-    public HomeController(ILogger<HomeController> logger, MyContext context)
+    public HomeController(ILogger<HomeController> logger, MyContext context, IWebHostEnvironment webHostEnvironment)
     {
         _logger = logger;
         _context = context;
+        WebHostEnvironment = webHostEnvironment;
     }
     [HttpGet("")]
     public RedirectToActionResult Index()
@@ -182,14 +185,18 @@ public class HomeController : Controller
             return View("CaseAdd");
             
         }
-        
+
+
+        string StringFileName = UploadFile(marrNgaView);
+
         Case newCase = new Case(){ // Krijohet nje objekt CASE
             UserId = id,
             Tittle = marrNgaView.Tittle,
             Description = Description,
             FamilySurname = marrNgaView.FamilySurname,
             City = marrNgaView.City,
-            Address = marrNgaView.Address
+            Address = marrNgaView.Address,
+            Myimage = StringFileName
         };
         _context.Cases.Add(newCase); // objekti CASE behet gati per tu rujt ne DB (ne kte moment nuk ka nje ID pasi ID eshte automatike (AUTOINCREMENT))
         _context.SaveChanges(); // ne momentin qe ben SaveChanges() nga context-i ky Object ruhet ne DB dhe krijohet ID e ktij objektit
@@ -203,8 +210,20 @@ public class HomeController : Controller
        
        
         return RedirectToAction("HomePage");
-        
-        
+    }
+    private string UploadFile(Case marrNgaView)
+    {
+       string fileName = null;
+       if(marrNgaView.Image!=null){
+        string Uploaddir = Path.Combine(WebHostEnvironment.WebRootPath,"Images");
+        fileName = Guid.NewGuid().ToString() + "-" + marrNgaView.Image.FileName;
+        string filePath = Path.Combine(Uploaddir,fileName);
+        using (var filestream = new FileStream(filePath,FileMode.Create))
+        {
+                marrNgaView.Image.CopyTo(filestream);
+        }
+       }
+       return fileName;
     }
 
     

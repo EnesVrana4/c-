@@ -20,7 +20,7 @@
                     <a href="/Chats" class="navbar-brand pfp "  id="inbox">
                         <i class="fa fa-inbox" ></i>
                     </a>
-                    <a href="Logout" class="navbar-brand pfp "  id="logout">
+                    <a href="/Logout" class="navbar-brand pfp "  id="logout">
                         <span class="glyphicon glyphicon-log-out" id="logout" ></span>
                     </a>
                 </div>
@@ -29,10 +29,10 @@
             </div>
         </nav>
 </header>
-<div BigDiv>
-    <div class="container2">
-        <form action="/Case/Add" method="post">
-            <label class="display-5 text-left">Raport a Case!</label>
+<div class="BigDiv">
+    <div class="container2 caseadd">
+        <form action="/Case/Add" method="post" enctype="multipart/form-data">
+            <label class="display-5 text-left">Report a Case!</label>
             <br>
             <br>
             <div class="row mb-4">
@@ -154,14 +154,17 @@
                     </div>
                 </div>
             </div>
+            <div class="form-control flex-fill mb-0 uploadpic">
+                <label class="form-label" asp-for="Image" >Upload Image</label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image"></span>
+            </div><br><br>
 
-        
+    
             
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary btn-block mb-4">Post Case</button>
         </form>
-    </div>
-    
-    @* <img src="C:\Users\User\Documents\C#2022\PeopleForPeople\Views\logo-PFP.png"  style="float:right;width:4px;height:42px;"> *@
-    
+    </div>    
 </div>
+              <img id="logo" src="~/Images/02917c76-8724-4a99-a0f6-23df22d80267-logo-PFP.png"    asp-append-version="true" alt="">

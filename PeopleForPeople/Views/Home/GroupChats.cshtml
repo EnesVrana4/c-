@@ -18,7 +18,7 @@
                     <a href="/Chats" class="navbar-brand pfp "  id="inbox">
                         <i class="fa fa-inbox" ></i>
                     </a>
-                    <a href="Logout" class="navbar-brand pfp "  id="logout">
+                    <a href="/Logout" class="navbar-brand pfp "  id="logout">
                         <span class="glyphicon glyphicon-log-out" id="logout" ></span>
                     </a>
                 </div>
@@ -26,7 +26,11 @@
             </div>
         </nav>
 </header>
-
+    @if (ViewBag.chatsOfUser.Count == 0)
+    {
+        <h3 id="empty">- No Chats Yet -</h3>
+        
+    }
     @foreach (var chat in ViewBag.chatsOfUser)
     {
         <nav class="post-nav display-flex vertical-align-middle space-between">
