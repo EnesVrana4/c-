@@ -52,13 +52,14 @@
             <p id="Thecase-Description">Description: <br>@ViewBag.theCase.Description</p>
 
         
-            
-                @if (ViewBag.theCase.UserId == @ViewBag.iLoguari.UserId)
+            @foreach (var chat in @ViewBag.CaseChatWithUsers)
+            {
+                @if (chat.UserId == @ViewBag.iLoguari.UserId)
                 {
                     <a href="/RemoveUserFromChat/@ViewBag.theCase.CaseId" class="btn btn-primary textsize" id="RemoveUserFromChat_Button">I'm done here</a><br><br>
                     return ;
                 }
-            
+            }
                 <a href="/AddUserToChat/@ViewBag.theCase.CaseId" class="btn btn-primary textsize " id="RemoveUserFromChat_Button">Offer Help</a><br><br>
         </div>
     </div>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vyZe+3UGDicoNOGbFdcajO13EfZHvehmh3d3GnaapY0=",
+  "Hash": "Zg6IcHl57fYD/XQ1AMIcdLweRyHUXGZ9oWbnGAYPcg8=",
   "Source": "PeopleForPeople",
   "BasePath": "_content/PeopleForPeople",
   "Mode": "Default",
@@ -102,12 +102,12 @@
       "OriginalItemSpec": "wwwroot\\Images\\02917c76-8724-4a99-a0f6-23df22d80267-logo-PFP.png"
     },
     {
-      "Identity": "C:\\Users\\User\\Documents\\C#2022\\PeopleForPeople\\wwwroot\\Images\\832a8577-ee70-4f6e-b11c-50b923f6272b-bm.jpg",
+      "Identity": "C:\\Users\\User\\Documents\\C#2022\\PeopleForPeople\\wwwroot\\Images\\0d514782-685a-4547-a322-5f5574ef6fde-logo.JPG",
       "SourceId": "PeopleForPeople",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\User\\Documents\\C#2022\\PeopleForPeople\\wwwroot\\",
       "BasePath": "_content/PeopleForPeople",
-      "RelativePath": "Images/832a8577-ee70-4f6e-b11c-50b923f6272b-bm.jpg",
+      "RelativePath": "Images/0d514782-685a-4547-a322-5f5574ef6fde-logo.JPG",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -116,7 +116,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\832a8577-ee70-4f6e-b11c-50b923f6272b-bm.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\0d514782-685a-4547-a322-5f5574ef6fde-logo.JPG"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Documents\\C#2022\\PeopleForPeople\\wwwroot\\Images\\4612a156-5fa7-4ba4-9135-1149fc0a0155-logo.JPG",
+      "SourceId": "PeopleForPeople",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Documents\\C#2022\\PeopleForPeople\\wwwroot\\",
+      "BasePath": "_content/PeopleForPeople",
+      "RelativePath": "Images/4612a156-5fa7-4ba4-9135-1149fc0a0155-logo.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\4612a156-5fa7-4ba4-9135-1149fc0a0155-logo.JPG"
     },
     {
       "Identity": "C:\\Users\\User\\Documents\\C#2022\\PeopleForPeople\\wwwroot\\js\\site.js",
