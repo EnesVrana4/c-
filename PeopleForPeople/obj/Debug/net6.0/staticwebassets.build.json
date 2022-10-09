@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Zg6IcHl57fYD/XQ1AMIcdLweRyHUXGZ9oWbnGAYPcg8=",
+  "Hash": "qlpDPrjmbYUlSeCjHzJ/Oj8WFO91EtOtj3qo+eFT3J4=",
   "Source": "PeopleForPeople",
   "BasePath": "_content/PeopleForPeople",
   "Mode": "Default",
@@ -119,6 +119,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\0d514782-685a-4547-a322-5f5574ef6fde-logo.JPG"
     },
     {
+      "Identity": "C:\\Users\\User\\Documents\\C#2022\\PeopleForPeople\\wwwroot\\Images\\33b5ae3b-207c-4b9f-b19a-ebd302c346e9-blog-photo.jpg",
+      "SourceId": "PeopleForPeople",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Documents\\C#2022\\PeopleForPeople\\wwwroot\\",
+      "BasePath": "_content/PeopleForPeople",
+      "RelativePath": "Images/33b5ae3b-207c-4b9f-b19a-ebd302c346e9-blog-photo.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\33b5ae3b-207c-4b9f-b19a-ebd302c346e9-blog-photo.jpg"
+    },
+    {
       "Identity": "C:\\Users\\User\\Documents\\C#2022\\PeopleForPeople\\wwwroot\\Images\\4612a156-5fa7-4ba4-9135-1149fc0a0155-logo.JPG",
       "SourceId": "PeopleForPeople",
       "SourceType": "Discovered",
@@ -134,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\4612a156-5fa7-4ba4-9135-1149fc0a0155-logo.JPG"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Documents\\C#2022\\PeopleForPeople\\wwwroot\\Images\\9d02da7d-56fa-4a63-9895-f60668d5a99e-blog-photo.jpg",
+      "SourceId": "PeopleForPeople",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Documents\\C#2022\\PeopleForPeople\\wwwroot\\",
+      "BasePath": "_content/PeopleForPeople",
+      "RelativePath": "Images/9d02da7d-56fa-4a63-9895-f60668d5a99e-blog-photo.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\9d02da7d-56fa-4a63-9895-f60668d5a99e-blog-photo.jpg"
     },
     {
       "Identity": "C:\\Users\\User\\Documents\\C#2022\\PeopleForPeople\\wwwroot\\js\\site.js",

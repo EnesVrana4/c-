@@ -6,15 +6,11 @@ using Microsoft.AspNetCore.Identity;
 using System.Text.RegularExpressions;
 #pragma warning disable CS8618
 
-
-
 namespace PeopleForPeople.Controllers;
-
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private readonly IWebHostEnvironment WebHostEnvironment;
-
     private MyContext _context;
 
     // here we can "inject" our context service into the constructor
